@@ -63,7 +63,7 @@ author:
   bio    : "Aspiring AI researcher with a passion to contribute"
   links:
     - label: "Linkedin"
-      icon: "fas fa-fw fa-link"
+      icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/soumee-mukherjee-6683721a1/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
