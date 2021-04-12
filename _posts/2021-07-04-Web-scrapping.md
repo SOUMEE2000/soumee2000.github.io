@@ -36,6 +36,7 @@ Import the libraries using:
 
 ```yaml
 from bs4 import BeautifulSoup
+
 import requests
 ```
 
