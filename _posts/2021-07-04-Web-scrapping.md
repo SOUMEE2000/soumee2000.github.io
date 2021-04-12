@@ -106,7 +106,7 @@ soup = bs(page.content,'html.parser')
 ```
 
 The end result should be something like this:
-<img src="assets/images/Web-scrapping1-compressed.jpg">
+<img src="/assets/images/Web-scrapping1-compressed.jpg">
 
 Give it some thought before moving on.
 
