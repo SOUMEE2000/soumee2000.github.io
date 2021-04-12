@@ -7,6 +7,7 @@ tags:
 categories: Technical
 author_profile: false
 classes: wide
+toc: true
 ---
 
 
