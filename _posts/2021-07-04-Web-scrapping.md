@@ -6,6 +6,7 @@ tags:
      - Kaggle
 categories: Technical
 author_profile: false
+classes: wide
 ---
 
 
