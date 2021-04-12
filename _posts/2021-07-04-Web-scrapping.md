@@ -1,9 +1,8 @@
 ---
-title: "Webscraping and Getting a Dataset to Kaggle Part-1 "
+title: "Webscraping and Preparing a Dataset Part-1 "
 excerpt_separator: "<!--more-->"
 tags:
      - Web Scrapping
-     - Kaggle
 categories: Technical
 author_profile: false
 classes: wide
