@@ -4,6 +4,7 @@ excerpt_separator: "<!--more-->"
 tags:
      - Web Scrapping
      - Kaggle
+categories: Technical
 author_profile: false
 ---
 
