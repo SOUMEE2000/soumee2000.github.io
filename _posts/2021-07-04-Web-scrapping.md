@@ -6,7 +6,7 @@ tags:
      - Kaggle
 categories: Technical
 author_profile: false
-toc: true
+classes: wide
 header: 
    overlay_image: "https://dbdzm869oupei.cloudfront.net/img/photomural/large/5d9da5b914d83.jpg"
    show_overlay_excerpt: False
