@@ -1,5 +1,5 @@
 ---
-title: "Webscraping and Getting a Dataset to Kaggle"
+title: "Webscraping and Getting a Dataset to Kaggle Part-1 "
 excerpt_separator: "<!--more-->"
 tags:
      - Web Scrapping
@@ -76,6 +76,7 @@ dialogues
 ```
 
 **And we assemble them together**
+
 ```yaml
 file1 = open("Season 4.txt","a+")
 for dialogue in dialogues:
@@ -84,4 +85,7 @@ for dialogue in dialogues:
   file1.write("\n")
 file1.close()
 ```
-So, that's just one episode done. We can do similarly for the others too. The full notebook is [here](https://github.com/SOUMEE2000/Natural-Language-Processing/blob/main/Created%20Datasets/Blackadder_webScraping.ipynb) and the dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson)
+
+So, that's just one episode done. We can do similarly for the others too. The full notebook is [here](https://github.com/SOUMEE2000/Natural-Language-Processing/blob/main/Created%20Datasets/Blackadder_webScraping.ipynb). 
+
+The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson).
