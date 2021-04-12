@@ -7,7 +7,8 @@ tags:
 categories: Technical
 author_profile: false
 classes: wide
-toc: true
+header: 
+   overlay_image: "https://wallpaperaccess.com/full/686998.jpg"
 ---
 
 
