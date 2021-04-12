@@ -1,5 +1,5 @@
 ---
-title: "Webscraping and Preparing a Dataset Part-1 "
+title: "Webscraping and Preparing a Dataset "
 excerpt_separator: "<!--more-->"
 tags:
      - Web Scrapping
@@ -12,7 +12,7 @@ header:
 ---
 
 
-##  Web-Scrapping
+##  Web-Scrapping Part -I
 
 Now, if we are about to get started on the subject let's just get our objectives straight. Web-scrapping simply means to scrap the contents of a web-page by looking at its html(more on that later). But why is such a simple and unrelated thing mentioned in a blog-site for machine learning? The answer is simple.
 
@@ -89,6 +89,91 @@ for dialogue in dialogues:
 file1.close()
 ```
 
-So, that's just one episode done. We can do similarly for the others too. The full notebook is [here](https://github.com/SOUMEE2000/Natural-Language-Processing/blob/main/Created%20Datasets/Blackadder_webScraping.ipynb). 
+So, that's just one episode done. We can do similarly for the others too. 
+* The full notebook is [here](https://github.com/SOUMEE2000/Natural-Language-Processing/blob/main/Created%20Datasets/Blackadder_webScraping.ipynb). 
+* The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson).
 
-The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson).
+## Web-scrapping Part - II
+
+This website is a little more trickier to work on. But we can get through this.
+
+```yaml
+import requests
+from bs4 import BeautifulSoup as bs
+url = "https://www.amazon.in/Test-Exclusive-746/product-reviews/B07DJHXTLJ/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
+page = requests.get(url)
+soup = bs(page.content,'html.parser')
+```
+
+The end result should be something like this:
+<img src="assets/images/Web-scrapping1-compressed.jpg">
+
+Give it some thought before moving on.
+
+Now, let's get the list of names first, shall we? Here is the slight change of syntax that will enable you to do so.
+```yaml
+name=soup.select('div span.a-profile-name')
+name
+data= name[2:]
+data
+```
+If you would click on the console again, you would find out that the div which encloses the names has a child span of the class "a-profile-name". So, the general syntax find the parent tags and keep on adding children to it. But the data we get from there is hardly clean. if would notice the first entry is of amazon and the second entry is the one written at the top of the page in the extract. The third entry infact is the exact copy of the previous one as it is part of the original content. So we need to drop them.
+```yaml
+cust_name=[]
+for i in data:
+    cust_name.append(i.get_text())
+
+cust_name
+```
+And that should get the full list of customers who have left their reviews.
+
+Similarly,
+```yaml
+ratings=soup.select('div.a-row i.a-icon span.a-icon-alt')[3:]
+ratings
+data=[]
+for i in ratings:
+    data.append(i.get_text())
+
+title=soup.select('a.review-title span')
+rev_title=[]
+
+for i in title:
+    rev_title.append(i.get_text())
+
+rev_title
+
+date=soup.select('span.review-date')
+rev_date=[]
+
+for i in date:
+    rev_date.append(i.get_text())
+
+content=soup.select('span.review-text-content span')
+rev_content=[]
+
+for i in content:
+    rev_content.append(i.get_text())
+```
+But wait are the lengths of the lists same for everyone of those. Let it remain a puzzler as to what to do if they are not the same.
+
+And finally,
+```yaml
+import pandas as pd
+df= pd.DataFrame()
+
+df["Date"]= rev_date
+df["Customer"]=cust_name
+df["Title"]=rev_title
+df["Review"]=rev_content
+df["Ratings"]=data
+
+df.to_csv("Reviews.csv")
+```
+That's it. Some final exercises could be to run the final scripts and see the output.
+
+```yaml
+html=list(soup.children)
+soup.find('p')
+```
+p=soup.find_all('p')
