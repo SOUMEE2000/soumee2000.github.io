@@ -175,5 +175,6 @@ That's it. Some final exercises could be to run the final scripts and see the ou
 ```yaml
 html=list(soup.children)
 soup.find('p')
-```
 p=soup.find_all('p')
+```
+Until the next post.🖐
