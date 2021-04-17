@@ -7,8 +7,8 @@ categories: Technical
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://www.capturelandscapes.com/wp-content/uploads/2017/07/Anemone-woods-e1499694394374.jpg"
-   overlay_filter: 1.0
+   overlay_image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/enchanted-forest-jason-naudi-photography.jpg"
+   overlay_filter: 0.00
 ---
 
 
