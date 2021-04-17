@@ -8,6 +8,7 @@ author_profile: false
 classes: wide
 header: 
    overlay_image: "https://dbdzm869oupei.cloudfront.net/img/photomural/large/5d9da5b914d83.jpg"
+   overlay_filter: 0.5
    caption: "Little Details but Important"
 ---
 
