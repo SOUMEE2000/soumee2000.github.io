@@ -59,6 +59,7 @@ This should give a response of status 200 meaning that everything has gone on we
 soup= BeautifulSoup(page.content, 'html.parser')
 soup
 ```
+
 This should return all the html content of the page. In fact, you can go to the settings of the page, then Developer tools, then elements to verify that all of the html has indeed been copied from there. But why do we need the entire contents? All we need is some selective portion of the data and have it to ourselves in an understandable format.
 As an example we will use today the web-page whose link was mentioned in the url. 
 
@@ -67,6 +68,8 @@ The website contains the full script of an episode of a world famous sitcom, Bla
 <img src="/assets/images/Web-scrapping.jpg">
 
 Do you see the above picture? Look at the console and you will find that the immediate parent of the <p> is a div with a class ="entry-content lazyloaded". We want the text written in those <p> tags. We express such a wish in this format.
+     
+     
 ```yaml
 script=soup.select('div.entry-content p')
 script
@@ -74,6 +77,8 @@ script
 This should load the entire html of the page and that's neither clean nor pretty....
      
 We are pretty near there but not done yet. There are a lot of images in the script too. The get_text() extracts the text from the tags.
+
+
 ```yaml
 dialogues=[]
 for i in script:
@@ -98,6 +103,7 @@ So, that's just one episode done. We can do similarly for the others too. But co
 * The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson) at Kaggle.
 
 ## Web-scrapping Part - II
+
 >"When the going gets tough the tough gets going." 
 
 The second website is a little trickier to work on. But we can get through this.
@@ -116,6 +122,8 @@ The end result should be something like this:
 Give it some thought before moving on.
 
 Now, let's get the list of names first, shall we? Here is the slight change of syntax that will enable you to do so.
+
+
 ```yaml
 name=soup.select('div span.a-profile-name')
 name
@@ -123,6 +131,8 @@ data= name[2:]
 data
 ```
 If you would click on the console again, you would find out that the div which encloses the names has a child span of the class "a-profile-name". So, the general syntax find the parent tags and keep on adding children to it. But the data we get from there is hardly clean. if would notice the first entry is of amazon and the second entry is the one written at the top of the page in the extract. The third entry infact is the exact copy of the previous one as it is part of the original content. So we need to drop them.
+
+
 ```yaml
 cust_name=[]
 for i in data:
@@ -133,6 +143,8 @@ cust_name
 And that should get the full list of customers who have left their reviews.
 
 Similarly,
+
+
 ```yaml
 ratings=soup.select('div.a-row i.a-icon span.a-icon-alt')[3:]
 ratings
