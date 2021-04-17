@@ -7,7 +7,7 @@ categories: Technical
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://i.pinimg.com/originals/77/ea/f5/77eaf598cbc1e06d31840ff5ef8fb746.jpg"
+   overlay_image: "https://i.pinimg.com/originals/66/8d/74/668d74df26512c1180b7d7b29f91008a.jpg"
    overlay_filter: 0.2
 ---
 
