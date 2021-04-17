@@ -1,5 +1,5 @@
 ---
-title: "Webscraping and Preparing a Dataset "
+title: "An Introduction to Image Processing "
 excerpt: "**Little Details but Important**"
 tags:
      - Web Scrapping
