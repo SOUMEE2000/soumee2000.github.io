@@ -100,7 +100,7 @@ So, that's just one episode done. We can do similarly for the others too. But co
 ## Web-scrapping Part - II
 >"When the going gets tough the tough gets going." 
 
-The second website. is a little more trickier to work on. But we can get through this.
+The second website is a little trickier to work on. But we can get through this.
 
 ```yaml
 import requests
