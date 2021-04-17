@@ -2,7 +2,7 @@
 title: "An Introduction to Image Processing "
 excerpt: "**Little Details but Important**"
 tags:
-     - Image-Processing
+     - Image Processing
 categories: Technical
 author_profile: false
 classes: wide
