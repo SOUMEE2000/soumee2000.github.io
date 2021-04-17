@@ -8,7 +8,7 @@ author_profile: false
 classes: wide
 header: 
    overlay_image: "https://www.capturelandscapes.com/wp-content/uploads/2017/07/Anemone-woods-e1499694394374.jpg"
-   overlay_filter: 0.2
+   overlay_filter: 1.0
 ---
 
 
