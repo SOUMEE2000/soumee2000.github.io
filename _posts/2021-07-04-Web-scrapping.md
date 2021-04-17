@@ -1,6 +1,6 @@
 ---
 title: "Webscraping and Preparing a Dataset "
-excerpt: "A Little on Preparing Data"
+excerpt: "**Little Details but Important**"
 tags:
      - Web Scrapping
 categories: Technical
