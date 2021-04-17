@@ -14,9 +14,12 @@ header:
 
 ##  Web-Scrapping Part -I
 
-Now, if we are about to get started on the subject let's just get our objectives straight. Web-scrapping simply means to scrap the contents of a web-page by looking at its html(more on that later). But why is such a simple and unrelated thing mentioned in a blog-site for machine learning? The answer is simple.
+Now, if we are about to get started on the subject let's just get our objectives and technical terms straight. Web-scrapping(it's a legitimate subject, by th way) simply means to scrap the contents of a web-page by looking at its html(more on that later). So. a couple of things are probably bugging you about this overly simple thing, right? 
 
-Machine learning is all about data and it can be sometimes immensely helpful to be able to gather data and create one's own datasets for testing the model or just adding data to it in general. But then, why write the code when we can just copy and paste things? In fact, the example today is simple enough to make you want to do that. But, it's not possible for bigger datasets with billions of columns. So, without delay, let's get started.
+### Why should I care? 
+And there is an equally simple answer for it too.
+
+Machine learning is all about data and it can be sometimes **immensely** helpful to be able to gather data and create one's own datasets for testing the model or just adding data to it in general!! But then, why write the code when we can just copy and paste things? In fact, the example today is simple enough to make you want to do that. Resist the temptation though. It's not possible to do so for bigger datasets with billions of columns. So, without delay, let's get started.
 
 This time we take the help of two python libraries:
 * bs4(for web-scrapping)
@@ -36,7 +39,6 @@ Import the libraries using:
 
 ```yaml
 from bs4 import BeautifulSoup
-
 import requests
 ```
 
@@ -60,7 +62,7 @@ soup
 This should return all the html content of the page. In fact, you can go to the settings of the page, then Developer tools, then elements to verify that all of the html has indeed been copied from there. But why do we need the entire contents? All we need is some selective portion of the data and have it to ourselves in an understandable format.
 As an example we will use today the web-page whose link was mentioned in the url. 
 
-The website contains the full script of an episode of a world famous sitcom, Blackadder, starring Rowan Atkinson, who is more famous as Mr. Bean!!. Such a collection of dialogues can be very interesting for natural language generation purposes. Datasets similar in nature but of Harry Potter and Friends exist on Kaggle.
+The website contains the full script of an episode of a world famous sitcom, Blackadder, starring Rowan Atkinson, who is more famous as Mr. Bean!!. It's golden comedy that's what it is!!! The four seasons are based on four stages of the British history, thereby making it ideal for natural language generation purposes, character analyses and several amusing things you can already find on kaggle, both datasets (of Harry Potter and Friends) and notebooks alike.
 
 <img src="/assets/images/Web-scrapping.jpg">
 
@@ -69,8 +71,9 @@ Do you see the above picture? Look at the console and you will find that the imm
 script=soup.select('div.entry-content p')
 script
 ```
-
-We are pretty near there but not done yet. The readability can be made better. There are a lot of images in the script too. The get_text() function does a good job here.
+This should load the entire html of the page and that's neither clean nor pretty....
+     
+We are pretty near there but not done yet. There are a lot of images in the script too. The get_text() extracts the text from the tags.
 ```yaml
 dialogues=[]
 for i in script:
@@ -79,7 +82,7 @@ for i in script:
 dialogues
 ```
 
-**And we assemble them together**
+*And we assemble them together*
 
 ```yaml
 file1 = open("Season 4.txt","a+")
@@ -90,13 +93,13 @@ for dialogue in dialogues:
 file1.close()
 ```
 
-So, that's just one episode done. We can do similarly for the others too. 
-* The full notebook is [here](https://github.com/SOUMEE2000/Natural-Language-Processing/blob/main/Created%20Datasets/Blackadder_webScraping.ipynb). 
-* The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson).
+So, that's just one episode done. We can do similarly for the others too. But congrats on the first dataset 
+* The full notebook is [here](https://github.com/SOUMEE2000/Natural-Language-Processing/blob/main/Created%20Datasets/Blackadder_webScraping.ipynb) in case you want to play around with it a bit. 
+* The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson) at Kaggle.
 
 ## Web-scrapping Part - II
-
-This website is a little more trickier to work on. But we can get through this.
+>When the going gets tough the tough gets going.
+The second website. is a little more trickier to work on. But we can get through this.
 
 ```yaml
 import requests
