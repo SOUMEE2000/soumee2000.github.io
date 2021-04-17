@@ -98,7 +98,8 @@ So, that's just one episode done. We can do similarly for the others too. But co
 * The dataset I created is [here](https://www.kaggle.com/soumee2000/blackadderfullscriptsrowan-atkinson) at Kaggle.
 
 ## Web-scrapping Part - II
->When the going gets tough the tough gets going.
+>"When the going gets tough the tough gets going." 
+
 The second website. is a little more trickier to work on. But we can get through this.
 
 ```yaml
