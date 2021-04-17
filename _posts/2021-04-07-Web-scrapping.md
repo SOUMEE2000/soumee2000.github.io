@@ -7,8 +7,8 @@ categories: Technical
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://dbdzm869oupei.cloudfront.net/img/photomural/large/5d9da5b914d83.jpg"
-   overlay_filter: 0.5
+   overlay_image: "https://www.capturelandscapes.com/wp-content/uploads/2017/07/Anemone-woods-e1499694394374.jpg"
+   overlay_filter: 0.2
 ---
 
 
