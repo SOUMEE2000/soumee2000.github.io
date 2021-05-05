@@ -1,9 +1,9 @@
 ---
-title: "A Detour of the U-Nets"
+title: "Evolution of U-Nets"
 excerpt: "**Various U-Net architectures in Segmentation of Retinal Blood Vessels**"
 tags:
-     - Web Scrapping
-categories: Technical
+     - Computer Vision
+categories: Literature Review
 author_profile: false
 classes: wide
 header: 
@@ -11,3 +11,20 @@ header:
    overlay_filter: 0.00
 ---
 
+# U-Net
+<img src="/assets/images/U-net-architecture.png">
+
+# Residual U-Net
+<img src="">
+
+# BCDU-Net
+<img src="">
+
+# DU-Net
+<img src="">
+
+# Spatial Attention U-Net
+<img src="">
+
+# GAN
+<img src="">
