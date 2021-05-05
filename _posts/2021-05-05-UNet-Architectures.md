@@ -28,8 +28,8 @@ header:
 
 # References:
 
-* SA-UNet:      https://arxiv.org/ftp/arxiv/papers/2004/2004.03696.pdf
-* DU-Net:       https://arxiv.org/pdf/1811.01206v1.pdf
-* BCDU-Net:     https://arxiv.org/pdf/1909.00166v1.pdf
-* Residual-Net: https://arxiv.org/pdf/1711.10684v1.pdf
-* U-Net:        https://arxiv.org/pdf/1505.04597v1.pdf
+* SA-UNet:      [https://arxiv.org/ftp/arxiv/papers/2004/2004.03696.pdf]
+* DU-Net:       [https://arxiv.org/pdf/1811.01206v1.pdf]
+* BCDU-Net:     [https://arxiv.org/pdf/1909.00166v1.pdf]
+* Residual-Net: [https://arxiv.org/pdf/1711.10684v1.pdf]
+* U-Net:        [https://arxiv.org/pdf/1505.04597v1.pdf]
