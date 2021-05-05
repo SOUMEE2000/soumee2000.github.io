@@ -24,7 +24,7 @@ header:
 <img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/DU-Net.png?raw=true">
 
 # Spatial Attention U-Net
-<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/SA-UNet.png?raw=true">
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/SA-UNet.png?raw=true">
 
 # References:
 
