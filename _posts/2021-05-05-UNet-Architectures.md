@@ -12,17 +12,24 @@ header:
 ---
 
 # U-Net
-<img src="/assets/images/U-net-architecture.png">
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/U-Net.png?raw=true">
 
 # Residual U-Net
-<img src="">
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/Residual-Net.png?raw=true">
 
 # BCDU-Net
-<img src="">
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/BCDU-Net.png?raw=true">
 
 # DU-Net
-<img src="">
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/DU-Net.png?raw=true">
 
 # Spatial Attention U-Net
 <img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/SA-UNet.png?raw=true">
 
+# References:
+
+* SA-UNet:      https://arxiv.org/ftp/arxiv/papers/2004/2004.03696.pdf
+* DU-Net:       https://arxiv.org/pdf/1811.01206v1.pdf
+* BCDU-Net:     https://arxiv.org/pdf/1909.00166v1.pdf
+* Residual-Net: https://arxiv.org/pdf/1711.10684v1.pdf
+* U-Net:        https://arxiv.org/pdf/1505.04597v1.pdf
