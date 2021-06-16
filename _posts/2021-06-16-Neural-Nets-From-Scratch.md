@@ -20,11 +20,11 @@ This right above you is what is called a neural network. That's right ...thrown 
 ## So why did someone want to build such a thing?
 
 > "What we want is a machine that can learn from experience"
->    - Alan Turing
+>    --- Alan Turing
 
 That was 1947 when Alan Turing said this. So, for years after that scientists kept on thinking...
                                                             
-*" but machines are idiots..if they could learn from experience....hmmm...what learns from experience...oh us!!!! Let's just try and replicate our brains then!!!!" *
+*" but machines are idiots..if they could learn from experience....hmmm...what learns from experience...oh us!!!! Let's just try and replicate our brains then!!!!"*
 
 And that was that!!. These neural networks are just a very very simplified representation of what goes on in our brains and how we learn from experiences stored in our brain. A connection of millions of neurons(just like those circles and millions of pathways just like those lines). Fascinating, isn't it, where the inspiration comes from and how it strikes them. We have come a long way since the 1950's with better algorithms but are nowhere near even with the best hardware available on earth, to reproduce what you have in your 5 * 5 * 5 cc skull. And there is a world of history and biology that I would have shared with you and probably I will write about them soon but I do encourage you exploring it on your own. You wouldn't be disppointed, I promise you.
 
