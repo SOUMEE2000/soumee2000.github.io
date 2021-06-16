@@ -7,13 +7,13 @@ categories: Technical
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://i.pinimg.com/originals/93/b9/21/93b921a87772bc6de676f67df5741c43.jpg"
+   overlay_image: "https://cdn.statically.io/img/wallpaperaccess.com/full/763325.jpg"
    overlay_filter: 0.00
 ---
 
 # Neural Networks
 
-<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/Neural-nets/neuralnets1.jpg">
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/Neural-nets/neuralnets1.jpg?raw=true">
           
 This right above you is what is called a neural network. That's right ...thrown you right into the deep end🤭🤭🤭. Lots of lines and circles and even more lines and circles and they just keep coming at you. Now, for a moment if you could pretend in your mind's eye that's a black box, almost like a circuit board with input pins and output pins, I may be able to explain to you how great an innovation this is and also the intuition and reasonings about why we care(and we care a lot about this guy in machine learning) about something so complicated-looking anyway. Having established let's see if I could get you excited enough to even try hard coding this ;-). It's really just a bunch of simple things. Hold tight!!!!
 
