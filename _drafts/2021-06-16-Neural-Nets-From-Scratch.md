@@ -31,6 +31,21 @@ And that was that!!. These neural networks are just very very simplified represe
 ## Let's get back to the big black box, shall we and see what goes inside it!!!
 
 <img src="">
-How do you describe something to a baby? Suppose you want him to remember what an elephant looks like. You say its got big ears, a trunk, a set of tusks and 4 feet. You could also describe it as something grey in colour, very tall and one with great strength. That too describes the elephant. At the same time suppose you say that the one yellow in colour, has whiskers and has 4 feet while you are describing a cat. The X_input are the descriptors or the features and so the next time the baby encounters them if it says its an elephant, that's great. But suppose the poor child paid more attention to the number of feet the animal had. So his predictions will have some error as he will just probably make a random guess as to what is a cat and what is an elephant...
+How do you describe something to a baby? Suppose you want a ten year old to distinguish between a cat and an elephant and given any breed of elephant or cat it classifies it correctly to its group. For an elephant you can say its got big ears, a trunk, a set of tusks and 4 feet. You could also describe it as something grey in colour, very tall and one with great strength. That too describes the elephant. And you would keep adding in more sets of features till the child gets some sort of an overall idea of how an elephant might look like. The same would go for the cat. And the next time the child sees a baby elephant on his way school(😂😂😂) based on what he has seen and understood previously, he. is going to come to a conclusion.
 
-Similarly, for a neural network you pass into the the features as X_input and what it predicts is the X_output. 
+So what you do is:
+* You feed him a set of features called **X_input** and provide a label to those features known as **X_output**
+* Then you give him a new set of festures called **X_input** and you want his opinion on the **X_output**
+* Mathematically, what you want to say is **P( X_output | X_input) = P( X_output ∩ X_input)∕ P( X_input | X_output)** 
+
+Now suppose you yourself made him remember bad data or he only caught part of what you said. So what he came away from that conversation is something as heneric as a cat has 4 feet. The next time the baby encounters them if he labels an elephant as one, that's great. But the odds are he will make some mistake and as the complexity of the classification increases (classifying a healthy leaf from an unhealthy one) the chances of error due to such personal biases to one only set of parameters will be pretty costly.
+
+So what we do....? A sensible approach would be to try minimise the error instead of giving the baby up for good. So, do we just reiterate over everything we just said to him???
+I am afraid yes. But maybe give him a bit of time grow up and stuff and be a bit more "mature about his perspectives".
+
+!story needs modification to drive point home
+
+Now the story that I read to you right now can be extrapolated to how a neural network approaches the process of learning. That's the intuition right there. It's because we want to code our own neural network that we need to define this story a little more mathematically.
+
+## Defining 
+
