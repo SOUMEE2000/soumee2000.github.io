@@ -30,7 +30,7 @@ And that was that!!. These neural networks are just very very simplified represe
 
 ## Story Time!!!
 
-<img src="">
+<img src="https://user-images.githubusercontent.com/52605586/123501617-d34bd200-d663-11eb-8a48-486c6c3779fd.png">
 How do you describe something to a baby? Suppose you want a ten year old to distinguish between a cat and an elephant and given any breed of elephant or cat you want him to classify the creature correctly to its group. For an elephant you can say its got big ears, a trunk, a set of tusks and 4 feet. You could also describe it as something grey in colour, very tall and one with great strength. That too describes the elephant. You could also the describe to him the features of different breeds of elephants. And you would probably keep adding in more sets of features till the child gets some sort of an overall idea of how an elephant might look like. The same would go for the cat. And the next time the child sees a baby elephant on his way to school(😂😂😂), based on what he has seen and understood previously, he is going to come to a conclusion.
 
 So what you do is:
@@ -53,3 +53,21 @@ The goal here is to know enough about the algorithm to be able to implement it a
 
 ## The Ground-work
 
+Let's segment out the the basic unit of the neural net and see what exactly does it do. It's this one right here. Also known as a **perceptron**. What it does is take a vector of inputs into it. Now, what might that vector be. Relating it to the previous example, it's the vector of features. 
+
+<img src="https://user-images.githubusercontent.com/52605586/123503141-9802d080-d66e-11eb-99df-69be1dd35716.png">
+
+**X_input = [ 4, large, tusks, teeth ]**
+
+But this sort of a representation the computer can not understand. What it can understand is numbers. So, suppose we make a table like this:
+
+
+| Number of feet   | Size   |  Colour  |  Tusk present |
+| :-----------:    | :-----:|  :----:  |   :-------:
+| 4                | 100    |  2       |  4            |
+
+
+Here 2 in the colour column means brown and 1 means grey, like the indices we have in maps. So our X_input from the previous example is =  **[ 4, 100, 2, 4]**. So, we feed it into the perceptron. Let's think a bit logically now. We have 4 numbers with us. The plan is that we do some operation on these numbers to get a single value. If that value is above a threshold value then the features correspond to a cat or they are that of an elephant. So, what operation can make that happen? Addition? It would make sense. The size of a cat would have to be realistically 1 if the size of an elephant is 100. That in itself could create a very big segregation if we are adding things up as the sum for a cat would avrage around 10-20 while that for an elephant would be 100-115. Similarly, think about other operations that we could do with these numbers and that will be your very own algorithm!!!!!
+
+But let's pause for a bit. What if we have a baby elephant, a newborn one. That would have a size of 20 perhaps. A cat has 4 feet and so does an elephant.
+<img src="">
