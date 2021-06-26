@@ -67,7 +67,38 @@ But this sort of a representation the computer can not understand. What it can u
 | 4                | 100    |  2       |  4            |
 
 
-Here 2 in the colour column means brown and 1 means grey, like the indices we have in maps. So our X_input from the previous example is =  **[ 4, 100, 2, 4]**. So, we feed it into the perceptron. Let's think a bit logically now. We have 4 numbers with us. The plan is that we do some operation on these numbers to get a single value. If that value is above a threshold value then the features correspond to a cat or they are that of an elephant. So, what operation can make that happen? Addition? It would make sense. The size of a cat would have to be realistically 1 if the size of an elephant is 100. That in itself could create a very big segregation if we are adding things up as the sum for a cat would avrage around 10-20 while that for an elephant would be 100-115. Similarly, think about other operations that we could do with these numbers and that will be your very own algorithm!!!!!
+Here 2 in the colour column means brown and 1 means grey, like the indices we have in maps. So our X_input from the previous example is **[ 4, 100, 2, 4]**. So, we feed it into the perceptron. Let's think a bit logically now. We have 4 numbers with us. The plan is that we do some operation on these numbers to get a single value. If that value is above a threshold value then the features correspond to a cat or they are the features of an elephant. So, what operation can make that happen? Addition? It would make sense. The size of a cat would have to be realistically 1 if the size of an elephant is 100. That in itself could create a very big segregation if we are adding things up as the sum for a cat would avrage around 10-20 while that for an elephant would be 100-115. Similarly, think about other operations that we could do with these numbers and that will be your very own algorithm!!!!!
 
-But let's pause for a bit. What if we have a baby elephant, a newborn one. That would have a size of 20 perhaps. A cat has 4 feet and so does an elephant.
+But let's pause for a bit. What if we have a baby elephant, a newborn one. He would have a size of 20 perhaps. Suppose for a minute that he was born without or tusks. It is indeed a sorry state of affairs(only a toy example) but then his number would add up to within 25. But that is closer to a cat than to an elephant. On the other hand we can assuredly say that a cat never grows to anything more than size 10. So, maybe the deciding factor here was not the other features but its size.
+
+Just like in our everyday lives some jobs have more priority than others, the size of the animal should have a higher priority than the more generic features such as the number of feet. That is because the size has a grater contribution to the final decision than the other factors. Ponder about it for a bit!!!!. But one way we can assign "priorities" is multiplying weights to these i.e., we take the weighted sum of 1* 4 + 4* 100 + 1* 2 + 1* 4. So, of course the threshold is going to change but the decisions that we are going to make should have more real-life significance. Similar to this some factors also should have lesser weights than what we have chosen right now. You can probably think of countless examples in which you would want to modify those weights in a certain way. 
+
+Generally, a perceptron does so by looking at the error it has produced and modifying its priorities accordingly, something called **Backpropagation**. 
 <img src="">
+
+## Single-layer perceptron
+
+```
+import numpy as np
+import seaborn as sns
+
+X= np.array([[1,0,0],[1,0,1],[1,0,1],[0,0,0]])
+Y= np.array([[1],[0],[0],[1]])
+
+#### Weights
+np.random.seed(10)
+weights = np.random.random((3,1))
+
+#activation function
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+    
+for i in range(2000):
+    sum = 0.02 + np.dot(X,weights)
+    predicted_output = sigmoid(sum)
+    
+    # Backprop algorithm
+    error = (Y- predicted_output)
+    adjustment = error * gradient(predicted_output)   ### gradient descent
+    weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
+```
