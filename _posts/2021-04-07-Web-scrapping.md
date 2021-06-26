@@ -5,6 +5,7 @@ tags:
      - Web Scrapping
 categories: Technical
 author_profile: false
+comments: true
 classes: wide
 header: 
    overlay_image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/enchanted-forest-jason-naudi-photography.jpg"
