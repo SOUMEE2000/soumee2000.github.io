@@ -75,18 +75,9 @@ Just like in our everyday lives some jobs have more priority than others, the si
 
 Generally, a perceptron does so by looking at the error it has produced and modifying its priorities accordingly, something called **Backpropagation**. 
 <img src="">
-## The Math for the feedforward part
 
-$$
-\left(\begin{array}{cc} 
-0.8944272 & 0.4472136\\
--0.4472136 & -0.8944272
-\end{array}\right)
-\left(\begin{array}{cc} 
-10 & 0\\ 
-0 & 5
-\end{array}\right)
-$$ 
+## The Math for the feedforward part
+![formula](https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1)
 ## Single-layer perceptron
 
 ```
