@@ -91,9 +91,16 @@ X_input = np.array([4,100,2,4])
 weights= np.array([1,4,1,1])
 sum = np.dot(X_input, weights.T) + 0.02
 ```
-But what is that 0.02? Well that is the bias term(more on tha later). 
+But what is that 0.02? Well that is known as the bias term. 
+
 
 ![equation](https://latex.codecogs.com/gif.latex?%5Clarge%20%5Csum%20X_%7Binput%7D%20.%20W%5E%7BT%7D%20&plus;%20b)
+
+And on the whole this equation should look very similar. It is of the form **Y = MX + C**. That is the function of a straight line with slope M and and intercept c!!!. Suppose we want to classify a dog and a cat only based on the features colour and size. So, on a graph each of those points would map to an (x,y) co-ordinates.  On a 2-D plane, you could imagine that the perceptron draws a line separating the red dots and blue dots ( elephants and cats). At first we start off with a random line and then we keep modifying the biases and weights until we get a decent enough line that can properly separate the red dots and blue dots. So, any new point would fall on either side of the line and the perceptron would say that this is this!!!!
+
+<img src= "https://user-images.githubusercontent.com/52605586/123555006-a2bd8280-d7a0-11eb-9fdd-d4be12866cbd.png">
+
+If we consider 3 features, then the plotting will be on the basis of (x,y,z). So, there will be a plane separating the two groups of points. For d features, it will be a d-dimensional feature space but obviously that is pretty hard to imagine😅.
 
 ```
 def sigmoid(x):
@@ -114,16 +121,25 @@ def gradient(x):
  adjustment = error * gradient(predicted_output)   ### gradient descent
  weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
 ```
+From here afterwards nothing theoretical is going to happen because I think that's enough theory for 1 blog-post😂😂😂. I will just run you down the essentials of the code you will find in this [colab notebook](https://github.com/SOUMEE2000/Machine-Learning-Stash/blob/main/Neural%20Networks/Neural_nets_From_Scratch.ipynb). Go through this first as all the standard steps for preprocessing the data is in there. Also this net gave a 95.5% accuracy on the Iris Dataset.
 
 ## Single-layer perceptron
+
+The most important part about coding this is to be very meticulous about handling the matrix dimensions.
 
 ```
 import numpy as np
 import seaborn as sns
 
 X= np.array([[1,0,0],[1,0,1],[1,0,1],[0,0,0]])
-Y= np.array([[1],[0],[0],[1]])
+Y= np.array([[1,0],[0,0],[0,1],[0,1]])
+```
+* Here my X is a set of 3 features....for each of the animals I want to teach my neural net about.
+* Dimensions of X :  4 * 3
+* My Y is a one-hot encoded vector. 
+* Dimensions of Y :  4 * 2
 
+```
 #### Weights
 np.random.seed(10)
 weights = np.random.random((3,1))
@@ -140,4 +156,74 @@ for i in range(2000):
     error = (Y- predicted_output)
     adjustment = error * gradient(predicted_output)   ### gradient descent
     weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
+```
+
+## Multi-layer perceptron
+
+```
+class neural_network():
+
+  def __init__(self):
+    self.weights=[]
+  
+  def network(self, input_layer, output_layer, learning_rate):
+
+    predicted=[]
+    input=input_layer
+    for i in self.weights:
+      X_input_hidden= np.dot(input, i)
+      predicted_output_hidden= sigmoid(X_input_hidden)
+      predicted.append(predicted_output_hidden)
+      input= predicted_output_hidden
+
+    error=[]
+    error_output = predicted[-1]- output_layer
+    error.append(error_output)
+    self.weights.reverse()
+    
+    for i in self.weights:
+      error_hidden= np.dot(error_output,i.T)
+      error.insert(0, error_hidden)
+      error_output= error_hidden
+
+    self.weights.reverse()
+    error = error[1:]
+    adjustment = error[0] * gradient(predicted[0])   ### gradient descent between input-hidden layer
+    self.weights[0] -= learning_rate * np.dot(input_layer.T,adjustment)
+
+    for i in range(0,len(self.weights)-1):
+      adjustment = error[i+1] * gradient(predicted[i+1])
+      self.weights[i+1] -= learning_rate * np.dot(predicted[i].T, adjustment)
+
+    return (self.weights, predicted[-1]- output_layer)
+
+  
+  
+  def training_network(self, epochs, inputs, outputs, no_of_hidden_neurons, learning_rate):
+    
+    h= no_of_hidden_neurons
+    self.weights.append(np.random.random(size=(inputs.shape[1],h[0])))
+    
+    for i in range(0,len(no_of_hidden_neurons)-1):
+      self.weights.append(np.random.random(size=(h[i], h[i+1])))
+    self.weights.append(np.random.random(size=(h[-1], outputs.shape[1])))
+
+    for i in range(epochs):
+      for j in range(len(inputs)):
+        self.weights, error_output = self.network(np.array([inputs[j]]), outputs[j], learning_rate)
+
+      print("For epoch %d error: %.3f " %(i, error_output.mean()))
+
+    
+  def predict(self, X_test):
+    results=[]
+    for j in X_test:
+      input=j
+      for i in self.weights:
+        X_input_hidden= np.dot(input, i)
+        predicted_output_hidden= sigmoid(X_input_hidden)
+        input= predicted_output_hidden
+      results.append(np.argmax(predicted_output_hidden))
+
+    return results
 ```
