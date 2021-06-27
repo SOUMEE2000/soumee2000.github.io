@@ -77,10 +77,7 @@ Generally, a perceptron does so by looking at the error it has produced and modi
 <img src="">
 
 ## The Math for the feedforward part
-![formula](https://render.githubusercontent.com/render/math?math=\begin{matrix}
-1 & 2 & 3\\
-a & b & c
-\end{matrix})
+![equation](https://latex.codecogs.com/gif.latex?%5Cbegin%7Bpmatrix%7D%201%20%26%202%20%26%203%20%26%204%20%5Cend%7Bpmatrix%7D)
 ## Single-layer perceptron
 
 ```
