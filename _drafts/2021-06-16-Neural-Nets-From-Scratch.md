@@ -77,7 +77,44 @@ Generally, a perceptron does so by looking at the error it has produced and modi
 <img src="">
 
 ## The Math for the feedforward part
-![equation](https://latex.codecogs.com/gif.latex?%5Cbegin%7Bpmatrix%7D%201%20%26%202%20%26%203%20%26%204%20%5Cend%7Bpmatrix%7D)
+
+The process by which the input to a perceptron move forward through it is what is called the feedforward part of the algorithm. And that calculation above definitely looks familiar. Pretty much the same thing happens for matrix multiplication, doesn't it?
+
+![equation](https://latex.codecogs.com/gif.latex?%5Clarge%20%7B%5Ccolor%7BDarkGreen%7D%20%5Cbegin%7Bbmatrix%7D%204%20%26%20100%20%26%202%20%26%204%20%5Cend%7Bbmatrix%7D%7D%20%5Ccdot%20%7B%5Ccolor%7BRed%7D%5Cbegin%7Bbmatrix%7D%201%5C%5C%204%5C%5C%201%5C%5C%201%20%5Cend%7Bbmatrix%7D%7D%20%3D%20%7B%5Ccolor%7BBlue%7D%5Cbegin%7Bbmatrix%7D%201*4%20&plus;%204*100&plus;%201*2&plus;%201*4%20%5Cend%7Bbmatrix%7D%20%7D%20%3D%20%7B%5Ccolor%7BBlue%7D%5Cbegin%7Bbmatrix%7D%20410%20%5Cend%7Bbmatrix%7D%7D)
+
+The red matrix has the weights and the green one contains the feature values. The python code for the above calculation is.
+
+```
+import numpy as np
+
+X_input = np.array([4,100,2,4])
+weights= np.array([1,4,1,1])
+sum = np.dot(X_input, weights.T) + 0.02
+```
+But what is that 0.02? Well that is the bias term(more on tha later). 
+
+![equation](https://latex.codecogs.com/gif.latex?%5Clarge%20%5Csum%20X_%7Binput%7D%20.%20W%5E%7BT%7D%20&plus;%20b)
+
+```
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+```
+
+## The Math for backpropagation
+
+**Loss function:**
+
+```
+def gradient(x):
+  return x * (1-x)
+```
+
+```
+ error = (Y- predicted_output)
+ adjustment = error * gradient(predicted_output)   ### gradient descent
+ weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
+```
+
 ## Single-layer perceptron
 
 ```
