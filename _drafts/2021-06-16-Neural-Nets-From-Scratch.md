@@ -99,13 +99,21 @@ But what is that 0.02? Well that is known as the bias term.
 And on the whole this equation should look very similar. It is of the form **Y = MX + C**. That is the function of a straight line with slope M and and intercept c!!!. Suppose we want to classify a dog and a cat only based on the features colour and size. So, on a graph each of those points would map to an (x,y) co-ordinates.  On a 2-D plane, you could imagine that the perceptron draws a line separating the red dots and blue dots ( elephants and cats). At first we start off with a random line and then we keep modifying the biases and weights until we get a decent enough line that can properly separate the red dots and blue dots. So, any new point would fall on either side of the line and the perceptron would say that this is this!!!!
 
 <img src= "https://user-images.githubusercontent.com/52605586/123555006-a2bd8280-d7a0-11eb-9fdd-d4be12866cbd.png">
-<img src="https://user-images.githubusercontent.com/52605586/123687276-5ccef000-d86e-11eb-8bd1-a0c3456f3626.png" style="float:left">
+<img src="https://user-images.githubusercontent.com/52605586/123687276-5ccef000-d86e-11eb-8bd1-a0c3456f3626.png" style="float:right">
 
-If we consider 3 features, then the plotting will be on the basis of (x,y,z). So, there will be a plane separating the two groups of points. For d features, it will be a d-dimensional feature space but obviously that is pretty hard to imagine😅.
+If we consider 3 features, then the plotting will be on the basis of (x,y,z). So, there will be a plane separating the two groups of points. For d features, it will be a d-dimensional feature space but obviously that is pretty hard to imagine😅. We are almost there, now. The network can make a decision for itself. It might be right or it might be wrong but it **can** decide for itself. 
+
+There is however just a little bit of work left and that little somthing is known as an **activation function**. 
+
+**Activation Functions:**
+
+So, what we tend to do with the output that we calculated using the above formula is pass it through this function to give some non-linearity to the network. We must realis at the end of the day we are not going to have such clean data that we can easily separate it with the help of a line. So, to curve the decision boundary a bit the activations functions are used. For now, please accept that this is what it is. This topic in itself is a broad area of research but for the purposes of this article we need not get so bothered about it. I will slip in a few links at the end for further reading. ^_~ 
 
 ```
 def sigmoid(x):
     return 1/(1+np.exp(-x))
+
+predicted_output = sigmoid(predicted_output)
 ```
 
 ## The Math for backpropagation
@@ -135,6 +143,11 @@ import seaborn as sns
 X= np.array([[1,0,0],[1,0,1],[1,0,1],[0,0,0]])
 Y= np.array([[1,0],[0,0],[0,1],[0,1]])
 ```
+Let's visualise the network here for a bit.
+
+<img src="https://user-images.githubusercontent.com/52605586/123691795-aa9a2700-d873-11eb-9e80-652153f2b2bb.png">
+
+Points to be noted:
 * Here my X is a set of 3 features....for each of the animals I want to teach my neural net about.
 * Dimensions of X :  4 * 3
 * My Y is a one-hot encoded vector. 
@@ -143,8 +156,12 @@ Y= np.array([[1,0],[0,0],[0,1],[0,1]])
 ```
 #### Weights
 np.random.seed(10)
-weights = np.random.random((3,1))
+weights = np.random.random((3,2))
+```
 
+Here we just randomly initialised the weights. Can you however guess the dimensions of the weight matrix?
+
+```
 #activation function
 def sigmoid(x):
     return 1/(1+np.exp(-x))
