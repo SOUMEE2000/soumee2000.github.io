@@ -99,6 +99,7 @@ But what is that 0.02? Well that is known as the bias term.
 And on the whole this equation should look very similar. It is of the form **Y = MX + C**. That is the function of a straight line with slope M and and intercept c!!!. Suppose we want to classify a dog and a cat only based on the features colour and size. So, on a graph each of those points would map to an (x,y) co-ordinates.  On a 2-D plane, you could imagine that the perceptron draws a line separating the red dots and blue dots ( elephants and cats). At first we start off with a random line and then we keep modifying the biases and weights until we get a decent enough line that can properly separate the red dots and blue dots. So, any new point would fall on either side of the line and the perceptron would say that this is this!!!!
 
 <img src= "https://user-images.githubusercontent.com/52605586/123555006-a2bd8280-d7a0-11eb-9fdd-d4be12866cbd.png">
+<img src="https://user-images.githubusercontent.com/52605586/123687276-5ccef000-d86e-11eb-8bd1-a0c3456f3626.png" style="float:left">
 
 If we consider 3 features, then the plotting will be on the basis of (x,y,z). So, there will be a plane separating the two groups of points. For d features, it will be a d-dimensional feature space but obviously that is pretty hard to imagine😅.
 
