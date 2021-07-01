@@ -188,7 +188,7 @@ weights = np.random.random((3,2))
 Here we just randomly initialised the weights. Why do you think the dimensions of the weight matrix are 3 * 2? Take a look at the network.
 The weight matrix is:
 
-![image](https://user-images.githubusercontent.com/52605586/124058982-fbfb0f80-da47-11eb-8188-c9dd12943903.png)
+<img src="https://latex.codecogs.com/gif.latex?%5Cdpi%7B200%7D%20%7B%5Ccolor%7BDarkBlue%7D%20%5Cbegin%7Bbmatrix%7D%20W_%7B11%7D%26%20W_%7B12%7D%20%5C%5C%20W_%7B21%7D%26%20W_%7B22%7D%20%5C%5C%20W_%7B31%7D%26%20W_%7B32%7D%20%5Cend%7Bbmatrix%7D%7D">
 
 ```
 #activation function
@@ -205,6 +205,7 @@ for i in range(epochs):
     adjustment = error * gradient(predicted_output)   ### gradient descent
     weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
 ```
+
 In the end we just have the feedforward part and the backpropagation part and we do this process for a total of 100 times, each time updating the weights which also translates to the child trying to get the intuition for the data you have given him to train.
 
 ## Multi-layer perceptron
