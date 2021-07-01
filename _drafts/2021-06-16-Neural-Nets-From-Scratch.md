@@ -120,6 +120,10 @@ predicted_output = sigmoid(predicted_output)
 
 **Loss function:**
 
+For the elephants and cats classification example we did have the labels ready with us didn't we? That is while asking the child for the correct answers we should know the true labels ourselevs. And then we can compare. Similarly, the loss function or the error is: 
+
+![image](https://user-images.githubusercontent.com/52605586/124061357-5a29f180-da4c-11eb-8df2-64e2d37b5d18.png)
+
 ```
 def gradient(x):
   return x * (1-x)
@@ -130,7 +134,7 @@ def gradient(x):
  adjustment = error * gradient(predicted_output)   ### gradient descent
  weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
 ```
-From here afterwards nothing theoretical is going to happen because I think that's enough theory for 1 blog-post😂😂😂. I will just run you down the essentials of the code you will find in this [colab notebook](https://github.com/SOUMEE2000/Machine-Learning-Stash/blob/main/Neural%20Networks/Neural_nets_From_Scratch.ipynb). Go through this first as all the standard steps for preprocessing the data is in there. Also this net gave a 95.5% accuracy on the Iris Dataset.
+From here afterwards nothing theoretical is going to happen because I think that's enough theory for one blog-post😂😂😂. I will just run you down the essentials of the code you will find in this [colab notebook](https://github.com/SOUMEE2000/Machine-Learning-Stash/blob/main/Neural%20Networks/Neural_nets_From_Scratch.ipynb). Go through this first as all the standard steps for preprocessing the data is in there. Also this net gave a 95.5% accuracy on the Iris Dataset.
 
 ## Single-layer perceptron
 
@@ -143,12 +147,12 @@ import seaborn as sns
 X= np.array([[1,0,0],[1,0,1],[1,0,1],[0,0,0]])
 Y= np.array([[1,0],[0,0],[0,1],[0,1]])
 ```
-Let's visualise the network here for a bit.
+Let's try and visualise the network for a bit.
 
 <img src="https://user-images.githubusercontent.com/52605586/123691795-aa9a2700-d873-11eb-9e80-652153f2b2bb.png">
 
 Points to be noted:
-* Here my X is a set of 3 features....for each of the animals I want to teach my neural net about.
+* Here my X is a set of 3 features....for each of the four animals I want to teach my neural net about.
 * Dimensions of X :  4 * 3
 * My Y is a one-hot encoded vector. 
 * Dimensions of Y :  4 * 2
@@ -159,14 +163,18 @@ np.random.seed(10)
 weights = np.random.random((3,2))
 ```
 
-Here we just randomly initialised the weights. Can you however guess the dimensions of the weight matrix?
+Here we just randomly initialised the weights. Why do you think the dimensions of the weight matrix are 3 * 2? Take a look at the network.
+The weight matrix is:
+
+![image](https://user-images.githubusercontent.com/52605586/124058982-fbfb0f80-da47-11eb-8188-c9dd12943903.png)
 
 ```
 #activation function
 def sigmoid(x):
     return 1/(1+np.exp(-x))
-    
-for i in range(2000):
+
+epochs = 100
+for i in range(epochs):
     sum = 0.02 + np.dot(X,weights)
     predicted_output = sigmoid(sum)
     
@@ -175,6 +183,7 @@ for i in range(2000):
     adjustment = error * gradient(predicted_output)   ### gradient descent
     weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
 ```
+In the end we just have the feedforward part and the backpropagation part and we do this process for a total of 100 times, each time updating the weightswhich also translates to the child trying to get the intuition for the data you have given him to train.
 
 ## Multi-layer perceptron
 
