@@ -141,11 +141,11 @@ For the elephants and cats classification example we did have the labels ready w
 
 ![image](https://user-images.githubusercontent.com/52605586/124061357-5a29f180-da4c-11eb-8df2-64e2d37b5d18.png)
 
-If we plot this function on a graph, with respect to the weights we have we should have a surface that dips at certain places. That is corresponding to the minimum error and that is what we want. What is in our hands are the weights and the biases and that is what we need to modify in order to get the minimum error situations. 
+If we plot this function on a graph, with respect to the weights we should have a surface that dips at certain places. That is corresponding to the minimum error and that is what we want. What is in our hands are the weights and the biases and that is what we need to modify in order to get the minimum error situations. 
 
 <img src="https://user-images.githubusercontent.com/52605586/124068948-070a6b80-da59-11eb-8561-086ba24eb133.png">
 
-And with increasing number of epochs the training should happen in the direction of low error as indicated by the black path. So, how do we find out that direction? We take the gradients or the slope or the derivative of the loss function with respect to its weights and keep modifying it. And the algorithm to do it is known as the gradient descent algorithm. This too is the most primitive of all the algorithms that have since been invented and work is going on this area as well.
+And with increasing number of epochs the training should happen in the direction of low error as indicated by the black path. So, how do we find out that direction? We take the gradients or the slope or the derivative of the loss function with respect to its weights and keep modifying it.  This too is the most primitive of all the algorithms that have since been invented and work is going on this area as well.
 
 ```
 def gradient(x):
@@ -155,7 +155,13 @@ def gradient(x):
  adjustment = error * gradient(predicted_output)   ### gradient descent
  weights += 0.01*np.dot(X.T,adjustment)     # input_samples.T is transpose so that matrix dimension matches
 ```
+The math for gradient descent is definitely a bit hard. The idea is that error for one particular neuron is going to depend directly on the weights that produced it. It is all calculus. The theory for the algorithm is going to be the subject of an upcoming post. But the results that the long-winded calculation yields are:
+
+![image](https://user-images.githubusercontent.com/52605586/124090711-b869cb00-da72-11eb-9bf3-216b4721fc00.png)
+
+And this is because what we really want to calculate is the change in weights and biases w.r.t the error function. 
 And you should see the error decreasing over time and the accuracy increasing. But this one perceptron can go only so far as to draw a straight line whoch we have already discussed is impractical for most real world data distributions. So, introducing multiple perceptrons should give better boundaries.
+
 From here afterwards nothing theoretical is going to happen because I think that's enough theory for one blog-post😂😂😂. I will just run you down the essentials of the code you will find in this [colab notebook](https://github.com/SOUMEE2000/Machine-Learning-Stash/blob/main/Neural%20Networks/Neural_nets_From_Scratch.ipynb). Go through this first as all the standard steps for preprocessing the data is in there. Also this net gave a 95.5% accuracy on the Iris Dataset.
 
 ## Single-layer perceptron
@@ -210,7 +216,9 @@ In the end we just have the feedforward part and the backpropagation part and we
 
 ## Multi-layer perceptron
 
-This below here is the code for an MLP, which I just encapsulated within a class for better modularity.
+This below here is the code for an MLP, which I just encapsulated within a class for better modularity. The code is exctly similar. So, try and find out the similarities first. We have the same backprop algo and the same feedforward algorithm. Only difference is we need to take  care of more number of weights and biases. Thus the extra loops. Same things are calculated and appended to extra lists to keep track of them.
+
+Only thing I had to take care of was defining the dimensions of the weight matrices in the second function.
 
 ```
 class neural_network():
