@@ -75,7 +75,7 @@ In the above example, 2 in the colour column means brown and 1 means grey, like 
 So far as the predictions are concerned, the net is not going to be able to predict exact words like "elephant and "cat". So, there is this trick called one-hot encoding to teach the neural net just that. Let's append to our small dataset these two rows. And this is that encoding. Simple but very efficient. 1 in the cat column means it's cat and 0 in the same means it isn't. So, our **X_input** is the first 4 columns and **X_output** are the last two. And normally, this is what a dataset looks like too only with a lot more data.
 
 | Number of feet   | Size   |  Colour  |  Tusk present |   Elephant   |    Cat   |
-| :-----------:    | :-----:|  :----:  |   :-------:   |  ;--------;  | ;------; |
+| :-----------:    | :-----:|  :----:  |   :-------:   |  :--------:  | :------: 
 | 4                | 100    |  2       |  4            |      1       |     0    |
 | 4                | 5      |  1       |  0            |      0       |     1    |
 
