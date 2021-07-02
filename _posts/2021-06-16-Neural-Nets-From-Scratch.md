@@ -32,7 +32,7 @@ And that was that!!. These neural networks are just very very simplified represe
 
 <img src="https://user-images.githubusercontent.com/52605586/123501617-d34bd200-d663-11eb-8a48-486c6c3779fd.png">
 
-How do you describe something to a baby? Suppose you want a ten year old to distinguish between a cat and an elephant and given any breed of elephant or cat you want him to classify the creature correctly to its group. For an elephant you can say its got big ears, a trunk, a set of tusks and 4 feet. You could also describe it as something grey in colour, very tall and one with great strength. That too describes the elephant. You could also the describe to the child the features of different breeds of elephants. And you would probably keep adding in more sets of features till the child gets some sort of an overall idea of how an elephant might look like. The same would go for the cat. And the next time the child sees a baby elephant on his way to school(😂😂😂), based on what he has seen and understood previously, he is going to come to a conclusion.
+How do you describe something to a baby? Suppose you want a ten year old to distinguish between a cat and an elephant and given any breed of elephant or cat you want him to classify the creature correctly to its group. For an elephant you can say its got big ears, a trunk, a set of tusks and 4 feet. You could also describe it as something grey in colour, very tall and one with great strength. That too describes the elephant. You could also describe to the child the features of different breeds of elephants. And you would probably keep adding in more sets of features till the child gets some sort of an overall idea of how an elephant might look like. The same would go for the cat. And the next time the child sees a baby elephant on his way to school(😂😂😂), based on what he has seen and understood previously, he is going to come to a conclusion.
 
 So what you do is:
 * You feed him a set of features called **X_input** and provide a label to those features known as **X_output**
@@ -159,7 +159,7 @@ The math for gradient descent is definitely a bit hard. The idea is that error f
 
 ![image](https://user-images.githubusercontent.com/52605586/124090711-b869cb00-da72-11eb-9bf3-216b4721fc00.png)
 
-And this is because what we really want to calculate is the change in weights and biases w.r.t the error function. 
+And this is because what we really want to calculate is the change in weights and biases w.r.t the error function. Please note that I have not included delta b or change in bias in any of the following code samples simply because it is easier not to. Once you finish reading to the end you can add in your own biases.
 And you should see the error decreasing over time and the accuracy increasing. But this one perceptron can go only so far as to draw a straight line whoch we have already discussed is impractical for most real world data distributions. So, introducing multiple perceptrons should give better boundaries.
 
 From here afterwards nothing theoretical is going to happen because I think that's enough theory for one blog-post😂😂😂. I will just run you down the essentials of the code you will find in this [colab notebook](https://github.com/SOUMEE2000/Machine-Learning-Stash/blob/main/Neural%20Networks/Neural_nets_From_Scratch.ipynb). Go through this first as all the standard steps for preprocessing the data is in there. Also this net gave a 95.5% accuracy on the Iris Dataset.
