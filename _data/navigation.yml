@@ -7,3 +7,6 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
+
+docs:
+  - title: "Getting Started"
