@@ -1,5 +1,6 @@
 ---
 title: "Webscraping and Preparing a Dataset "
+layout: splash
 excerpt: "**Little Details but Important**"
 tags:
      - Web Scrapping
