@@ -10,6 +10,8 @@ classes: wide
 header: 
    overlay_image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/enchanted-forest-jason-naudi-photography.jpg"
    overlay_filter: 0.00
+sidebar:
+   nav: docs
 ---
 
 
