@@ -6,6 +6,6 @@ categories: Literature-Review
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://www.outdoorphotographer.com/images/stories/2014/dec/contrast/lead.jpg"
+   overlay_image: "http://getwallpapers.com/wallpaper/full/0/c/1/1052025-1080p-nature-wallpaper-1920x1080-high-resolution.jpg"
    overlay_filter: 0.00
 ---
