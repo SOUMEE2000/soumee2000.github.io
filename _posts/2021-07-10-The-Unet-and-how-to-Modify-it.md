@@ -7,7 +7,7 @@ author_profile: false
 classes: wide
 header: 
    overlay_image: "https://wallpapercave.com/wp/wp5476518.jpg"
-   overlay_filter: 0.00
+   overlay_filter: 0.5
 ---
 
 
