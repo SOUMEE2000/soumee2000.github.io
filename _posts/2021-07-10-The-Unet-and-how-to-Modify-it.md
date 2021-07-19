@@ -6,7 +6,7 @@ categories: Technical
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc1doKpkTCgTod5c58ohi_xMZZhdTA8mXFMA&usqp=CAU"
+   overlay_image: "https://p4.wallpaperbetter.com/wallpaper/131/850/544/starry-sky-night-stars-glitter-wallpaper-preview.jpg"
    overlay_filter: 0.00
 ---
 
