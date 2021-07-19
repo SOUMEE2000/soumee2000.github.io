@@ -2,7 +2,7 @@
 title: "Tinkering with Unets"
 excerpt: "**Image Processing and CNN basics**"
 tags: Computer Vision
-categories: Literature-Review
+categories: Technical
 author_profile: false
 classes: wide
 header: 
