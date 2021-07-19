@@ -1,6 +1,6 @@
 ---
 title: "Cooking up a Neural Network "
-excerpt: "**This is just a coding tutorial but hoping you take away more than just the code**"
+excerpt: "**It's a fascinating world full of fascinating algorithms, all of which have very simple origins and lucid explanations. Let's see if you can get inspired enough to code your own neural networks.**"
 tags:
      - Neural Network
 categories: Technical
