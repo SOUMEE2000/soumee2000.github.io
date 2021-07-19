@@ -1,6 +1,6 @@
 ---
 title: "Tinkering with Unets"
-excerpt: "**Image Processing and CNN basics**"
+excerpt: "**Let's dive right into UNets, what they are and how we should modify them to suit our particular use cases.**"
 tags: Computer Vision
 categories: Technical
 author_profile: false
@@ -10,4 +10,4 @@ header:
    overlay_filter: 0.00
 ---
 
-"http://getwallpapers.com/wallpaper/full/0/c/1/1052025-1080p-nature-wallpaper-1920x1080-high-resolution.jpg"
+
