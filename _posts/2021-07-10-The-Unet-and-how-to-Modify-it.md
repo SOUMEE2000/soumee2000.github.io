@@ -6,7 +6,7 @@ categories: Technical
 author_profile: false
 classes: wide
 header: 
-   overlay_image: "https://p4.wallpaperbetter.com/wallpaper/131/850/544/starry-sky-night-stars-glitter-wallpaper-preview.jpg"
+   overlay_image: "https://wallpapercave.com/wp/wp2706028.jpg"
    overlay_filter: 0.00
 ---
 
