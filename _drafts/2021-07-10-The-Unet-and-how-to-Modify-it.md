@@ -10,9 +10,15 @@ header:
    overlay_filter: 0.2
 ---
 
-Unet image
+<img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/U-Net.png?raw=true">
 What is a unet?
 Why do we need this extra thing? How is it better than what we already have?
-ans: this is just an addition to what we already have with us, then explain theory
+ans: this is just an addition to what we already have with us, 
+
+Then explain theory, as if you're telling a story
 
 quote stuff from the paper.
+
+References:
+
+[UNet](https://arxiv.org/pdf/1505.04597v1.pdf)
