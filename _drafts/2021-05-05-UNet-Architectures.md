@@ -11,6 +11,7 @@ header:
    overlay_filter: 0.00
 ---
 
+Hello, there people.
 U-Nets are the first thing I learnt about when I decided to give Medical Image Processing a shot. They are currently the state-of-the-art models in this field. Down below is an image of a vanilla U-Net.
 # U-Net
 <img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/U-Net.png?raw=true">
@@ -27,6 +28,7 @@ U-Nets are the first thing I learnt about when I decided to give Medical Image P
 # Spatial Attention U-Net
 <img src="https://github.com/SOUMEE2000/BLOG-Images/blob/main/U-NET/SA-UNet.png?raw=true">
 
+And coding them is pretty challenging at first, not gonna deny. And maybe that's something I will do for a later blog-post😁 but until then 👋.
 # References:
 
 * [Spatial Attention UNet](https://arxiv.org/ftp/arxiv/papers/2004/2004.03696.pdf)
