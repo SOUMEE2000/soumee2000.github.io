@@ -1,6 +1,6 @@
 ---
 title: "Evolution of U-Nets"
-excerpt: "**Various U-Net architectures in Segmentation of Retinal Blood Vessels**"
+excerpt: "**What can possibly be a better way to learn about something other than seeing how it got created, how it slowly evolved into the giant that it is. It's also a handy way to know about several other concepts.**"
 tags:
      - Computer Vision
 categories: Literature-Review
