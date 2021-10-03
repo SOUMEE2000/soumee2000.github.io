@@ -1,6 +1,6 @@
 ---
 title: "Evolution of U-Nets"
-excerpt: "**What can possibly be a better way to learn about something other than seeing how it got created, how it slowly evolved into the giant that it is. It's also a handy way to know about several other concepts.**"
+excerpt: "**A brief walk-through of UNets and how they evolved to include several concepts like attention. There isn't a better way to learn about something other than seeing how it got created, how it slowly evolved into the giant that it is.**"
 tags:
      - Computer Vision
 categories: Literature-Review
