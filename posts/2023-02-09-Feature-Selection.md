@@ -1,9 +1,9 @@
 ---
-title: "Whipping up a Neural Network from Scratch "
+title: "Feature Selection - I "
 excerpt: "**It's a fascinating world full of fascinating algorithms, all of which have very simple origins and lucid explanations. Let's see if you can get inspired enough to code your own neural networks.**"
 tags:
-     - Neural Network
-categories: Technical
+     - Statistics
+categories: Feature Engineering
 author_profile: false
 classes: wide
 header: 
