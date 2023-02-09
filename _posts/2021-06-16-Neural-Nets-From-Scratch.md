@@ -1,5 +1,5 @@
 ---
-title: "Cooking up a Neural Network "
+title: "Whipping up a Neural Network from Scratch "
 excerpt: "**It's a fascinating world full of fascinating algorithms, all of which have very simple origins and lucid explanations. Let's see if you can get inspired enough to code your own neural networks.**"
 tags:
      - Neural Network
