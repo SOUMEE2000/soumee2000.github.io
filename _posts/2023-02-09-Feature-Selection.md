@@ -1,6 +1,6 @@
 ---
 title: "Feature Selection - I "
-excerpt: "**It's a fascinating world full of fascinating algorithms, all of which have very simple origins and lucid explanations. Let's see if you can get inspired enough to code your own neural networks.**"
+excerpt: "** yo**"
 tags:
      - Statistics
 categories: Feature Engineering
