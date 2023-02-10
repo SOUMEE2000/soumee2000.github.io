@@ -3,7 +3,7 @@ title: "Webscraping and Preparing a Dataset "
 excerpt: "**The abundance of data these days is overwhelming, and its growing at an ever increasing rate. How wonderful would it be if we could use a little of it for our analytics. Let's get you started with some of the tools.**"
 tags:
      - Web Scrapping
-categories: Technical
+categories: Basics
 author_profile: false
 comments: true
 classes: wide
