@@ -3,7 +3,7 @@ title: "Feature Engineering - I "
 excerpt: "**Let's dig into Selecting the proper features to train our models with a little bit of Statistics - i) Variance-based methods, ii) Correlation-based, iii) ANNOVA test, iv) Chi-square test.**"
 tags:
      - Neural Network
-categories: Feature Engineering
+categories: Feature-Engineering
 author_profile: false
 classes: wide
 header: 
