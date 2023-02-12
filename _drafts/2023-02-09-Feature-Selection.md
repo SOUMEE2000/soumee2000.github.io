@@ -12,7 +12,7 @@ header:
 ---
 
 # Objective:
-Yo
+When we come across a modern-day dataset of hundreds and thousands of attributes for data...
 
 # Variance Threshold:
 
@@ -35,17 +35,18 @@ Correlation is related to covariance. The formula to calculate covariance betwee
 
 where uA is the mean of all the data in attribute A and same for uB. Sample calculation:
 
-Day 1=(1.2%−1.675%)×(3.1%−4.125%)=0.487
+Day 1=(1.2−1.675)×(3.1−4.125)=0.487
 
-Day 2=(1.8%−1.675%)∗(4.2%−4.125%)=0.009
+Day 2=(1.8−1.675)∗(4.2−4.125)=0.009
 
-Day 3=(2.2%−1.675%)∗(5.0%−4.125%)=0.459
+Day 3=(2.2−1.675)∗(5.0−4.125)=0.459
 
-Day 4=(1.5%−1.675%)∗(4.2%−4.125%)=−0.013
+Day 4=(1.5−1.675)∗(4.2−4.125)=−0.013
 
 Correlation = 0.487+0.009+0.459−0.013 /4-1= 0.943/3
 
 Now all you need is a proper threshold beyond which if the correlation goes you reject one of the attributes.
+
 **Limitation:** This method only works for numeric data.
 
 # ANNOVA
