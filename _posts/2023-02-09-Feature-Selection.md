@@ -18,10 +18,10 @@ Yo
 <image src = "https://user-images.githubusercontent.com/52605586/218003230-1b5bab53-0716-4aa0-9f81-82f31464e136.png" height=50px>
 
 # Correlation Based Filtering:
-<image src="https://user-images.githubusercontent.com/52605586/218004357-89a8210b-33b6-4582-9bdd-387c888b6d34.png" height=50px>
+![equation](https://user-images.githubusercontent.com/52605586/218004357-89a8210b-33b6-4582-9bdd-387c888b6d34.png)
 
 # ANNOVA
-<img src= "https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20F-score%20%3D%20%5Cfrac%7BBetween%20Group%20Variance%7D%7BWithin%20Group%20Variance%7D">
+![equation](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20F-score%20%3D%20%5Cfrac%7BBetween%20Group%20Variance%7D%7BWithin%20Group%20Variance%7D)
 
 ## Within Group variance
 <img src = "https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20SSW%20%3D%20%5Csum_%7Bi%20%5Cepsilon%20Amazon%7D%5Cleft%20%28%20x_%7Bi%7D%20-%20%5Cmu_%7BA%7D%5Cright%20%29%5E%7B2%7D%20&plus;%20%5Csum_%7Bi%20%5Cepsilon%20Bajaj%7D%5Cleft%20%28%20x_%7Bi%7D%20-%20%5Cmu_%7BB%7D%5Cright%20%29%5E%7B2%7D%20&plus;%20%5Csum_%7Bi%20%5Cepsilon%20TCS%7D%5Cleft%20%28%20x_%7Bi%7D%20-%20%5Cmu_%7BT%7D%5Cright%20%29%5E%7B2%7D" height=40px>
