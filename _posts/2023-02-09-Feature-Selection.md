@@ -10,7 +10,9 @@ header:
    overlay_image: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg"
    overlay_filter: 0.00
 ---
+
 # Objective:
+Yo
 
 # Variance Threshold:
 <image src = "https://user-images.githubusercontent.com/52605586/218003230-1b5bab53-0716-4aa0-9f81-82f31464e136.png" height=50px>
@@ -19,7 +21,6 @@ header:
 <image src="https://user-images.githubusercontent.com/52605586/218004357-89a8210b-33b6-4582-9bdd-387c888b6d34.png" height=50px>
 
 # ANNOVA
-
 <img src= "https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20F-score%20%3D%20%5Cfrac%7BBetween%20Group%20Variance%7D%7BWithin%20Group%20Variance%7D">
 
 ## Within Group variance
