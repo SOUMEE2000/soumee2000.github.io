@@ -18,7 +18,7 @@ In this blog I will be mostly focussing on some of the statiscal techniques and 
 
 There are broadly 3 categories of feature-selection possible. Today we look at the **Filter-based methods**.
 
-<img src="https://github.com/SOUMEE2000/soumee2000.github.io/blob/master/assets/images/Feature%20Engineering-filter%20based-Page-2.drawio.png">
+<img src="https://github.com/SOUMEE2000/soumee2000.github.io/blob/master/assets/images/Feature%20Engineering-filter%20based-Page-2.drawio.png?raw=true">
 
 # Variance Based:
 
