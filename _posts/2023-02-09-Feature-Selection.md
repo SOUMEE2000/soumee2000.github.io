@@ -18,7 +18,7 @@ In this blog I will be mostly focussing on some of the statiscal techniques and 
 
 There are broadly 3 categories of feature-selection possible. Today we look at the **Filter-based methods**.
 
-<img src = "https://github.com/SOUMEE2000/soumee2000.github.io/blob/master/assets/images/Feature%20Engineering-filter%20based-Page-2.drawio.png">
+![image](https://github.com/SOUMEE2000/soumee2000.github.io/blob/master/assets/images/Feature%20Engineering-filter%20based-Page-2.drawio.png)
 
 # Variance Based:
 
@@ -34,11 +34,11 @@ Let's look at these columns for a bit. There is little to no variance in salary 
 ![equation](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cleft%20%28%20x_%7Bi%7D%5E%7Ba%7D%20-%20%5Cmu%5E%7Ba%7D%20%5Cright%20%29%5E%7B2%7D%7D%7Bn-1%7D)
 
 So,
-
+```
 for each attribute:
-     calculate the the variance
-     
-The trributes with less variance can be rejected.
+     calculate the variance
+```     
+The atrributes with less variance can be rejected.
 
 **Limitation:** This method only works for numeric data.
 
