@@ -20,7 +20,8 @@ There are broadly 3 categories of feature-selection possible. Today we look at t
 
 <img src="https://github.com/SOUMEE2000/soumee2000.github.io/blob/master/assets/images/Feature%20Engineering-filter%20based-Page-2.drawio.png?raw=true">
 
-# Variance Based:
+# Filter-based Techniques
+## Variance Based:
 
 Salary | Company |
 --     | --      |
@@ -42,7 +43,7 @@ The atrributes with less variance can be rejected.
 
 **Limitation:** This method only works for numeric data.
 
-# Correlation Based Filtering:
+## Correlation Based Filtering:
 Correlation based filtering unlike the one above works with two columns. Suppose there are two columns, A and B as displayed below. If these two columns have a high value of correlation between them above a certain threshold, we can reject either attribute A or attribute B because both of these then represent the same information!
 
 Day | A  | B
@@ -52,7 +53,7 @@ Day | A  | B
 3   |2.2%  |5.0% 
 4   |1.5%  |4.2% 
 
-## Formulae
+### Formulae
 Correlation is related to covariance. The formula to calculate covariance between two attribute columns A and B are:
 
 ![equation](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20correlation%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cfrac%7B%5Cleft%20%28%20x_%7Bi%7D%5E%7Ba%7D%20-%20%5Cmu%5E%7Ba%7D%20%5Cright%20%29%5Cast%20%5Cleft%20%28%20x_%7Bi%7D%5E%7Bb%7D%20-%20%5Cmu%5E%7Bb%7D%20%5Cright%20%29%7D%7Bn-1%7D)
