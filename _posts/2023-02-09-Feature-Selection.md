@@ -72,9 +72,7 @@ Correlation = 0.487+0.009+0.459−0.013 /4-1= 0.943/3
 
 Now all you need is a proper threshold beyond which if the correlation goes you reject one of the attributes.
 
-**Limitation:** This method only works for numeric data. Sad right?
-
-Don't worry ANNOVA and Chi-square are coming to your rescue!
+**Limitation:** This method only works for numeric data. Sad right? Don't worry ANNOVA and Chi-square are coming to your rescue!
 
 # ANNOVA
 
