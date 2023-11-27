@@ -68,6 +68,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/SOUMEE2000"
+    - label: "Portfolio-site"
+      icon: "fa fa-pencil-square-o"
+      url: "https://soumee-portfolio.onrender.com/"
 footer:
   links:
     - label: "GitHub"
