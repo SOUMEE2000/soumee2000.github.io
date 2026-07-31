@@ -1,0 +1,21 @@
+---
+type Props = {
+  items: readonly string[];
+  label?: string;
+};
+
+const { items, label = "Technologies" } = Astro.props;
+---
+
+<div class="mt-4">
+  <span class="sr-only">{label}:</span>
+  <ul class="flex flex-wrap gap-2" aria-label={label}>
+    {
+      items.map(item => (
+        <li class="bg-muted text-muted-foreground rounded-sm px-2 py-1 text-xs font-medium">
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+</div>

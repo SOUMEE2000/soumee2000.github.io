@@ -1,0 +1,127 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import ExternalLinks from "@/components/ExternalLinks.astro";
+import TechnologyList from "@/components/TechnologyList.astro";
+import {
+  education,
+  experiences,
+  fellowship,
+  profile,
+  skillGroups,
+} from "@/data";
+import config from "@/config";
+
+const contactLinks = [
+  { label: profile.email, url: `mailto:${profile.email}` },
+  ...profile.socialLinks,
+];
+---
+
+<Layout
+  title={`About | ${config.site.title}`}
+  description="About Soumee Mukherjee: ML researcher, software developer, MITACS fellow, and published researcher."
+>
+  <Header />
+  <main id="main-content" data-pagefind-body>
+    <header class="app-layout border-border border-b py-12 sm:py-16">
+      <p class="eyebrow">About</p>
+      <h1 class="mt-3 text-4xl font-bold sm:text-5xl">{profile.name}</h1>
+      <p class="mt-4 text-xl font-medium">{profile.roles.join(" · ")}</p>
+      <p class="text-muted-foreground mt-5 max-w-3xl text-lg leading-8">
+        {profile.summary}
+      </p>
+      <p class="text-muted-foreground mt-3">{profile.location}</p>
+      <ExternalLinks links={contactLinks} class="mt-6" />
+    </header>
+
+    <section class="app-layout py-12 sm:py-16">
+      <h2 class="text-3xl font-semibold">Experience</h2>
+      <div class="mt-8 space-y-10">
+        {
+          experiences.map(experience => (
+            <article class="grid gap-4 md:grid-cols-[13rem_1fr]">
+              <div>
+                <p class="text-highlight font-semibold">
+                  {experience.period.label}
+                </p>
+                <p class="text-muted-foreground mt-1 text-sm">
+                  {experience.location}
+                </p>
+              </div>
+              <div class="border-border border-t pt-4 md:pt-0 md:pl-6">
+                <h3 class="text-xl font-semibold">{experience.role}</h3>
+                <p class="mt-1 font-medium">{experience.organization}</p>
+                <p class="text-muted-foreground mt-3 leading-7">
+                  {experience.summary}
+                </p>
+                <ul class="mt-4 list-disc space-y-2 pl-5">
+                  {experience.highlights.map(highlight => (
+                    <li>{highlight}</li>
+                  ))}
+                </ul>
+                <TechnologyList items={experience.skills} label="Skills" />
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="bg-muted/45 border-border border-y">
+      <div class="app-layout py-12 sm:py-16">
+        <h2 class="text-3xl font-semibold">Education and fellowship</h2>
+        <div class="mt-8 grid gap-8 lg:grid-cols-2">
+          {
+            education.map(item => (
+              <article class="border-border border-t pt-5">
+                <p class="text-highlight text-sm font-semibold">
+                  {item.period.label}
+                </p>
+                <h3 class="mt-2 text-xl font-semibold">{item.program}</h3>
+                <p class="mt-1">{item.institution}</p>
+                <p class="text-muted-foreground mt-1">
+                  {item.location}
+                  {item.grade ? ` · ${item.grade}` : ""}
+                </p>
+                {item.coursework && (
+                  <p class="text-muted-foreground mt-4 text-sm leading-6">
+                    Selected coursework: {item.coursework.join(", ")}
+                  </p>
+                )}
+              </article>
+            ))
+          }
+          <article class="border-highlight border-t-2 pt-5">
+            <p class="text-highlight text-sm font-semibold">
+              {fellowship.period.label}
+            </p>
+            <h3 class="mt-2 text-xl font-semibold">{fellowship.name}</h3>
+            <p class="mt-1">{fellowship.institution}</p>
+            <p class="text-muted-foreground mt-3 leading-7">
+              {fellowship.selection}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-layout py-12 sm:py-16">
+      <h2 class="text-3xl font-semibold">Technical skills</h2>
+      <div class="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          skillGroups.map(group => (
+            <article class="border-border border-t pt-4">
+              <h3 class="font-semibold">{group.name}</h3>
+              <p class="text-muted-foreground mt-2 leading-7">
+                {group.skills.join(" · ")}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import Tag from "@/components/Tag.astro";
+import IconRss from "@/assets/icons/IconRss.svg";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getUniqueTags } from "@/utils/getUniqueTags";
+import config from "@/config";
+
+const posts = getSortedPosts(await getCollection("posts"));
+const tags = getUniqueTags(posts);
+---
+
+<Layout
+  title={`Writing | ${config.site.title}`}
+  description="Writing by Soumee Mukherjee on machine learning, neural networks, feature selection, and data."
+>
+  <Header />
+  <main id="main-content" class="app-layout pb-16" data-pagefind-body>
+    <header class="border-border border-b py-12 sm:py-16">
+      <p class="eyebrow">Writing</p>
+      <div class="mt-3 flex max-w-4xl items-center gap-4">
+        <h1 class="text-4xl font-bold sm:text-5xl">
+          Notes from first principles
+        </h1>
+        <a
+          href="/rss.xml"
+          title="RSS feed"
+          aria-label="RSS feed"
+          class="text-accent p-2"
+        >
+          <IconRss class="size-6" />
+        </a>
+      </div>
+      <p class="text-muted-foreground mt-4 max-w-3xl text-lg leading-8">
+        Practical explanations of machine learning and data workflows, with the
+        code, diagrams, and intermediate reasoning left in.
+      </p>
+    </header>
+
+    <div class="grid gap-12 pt-10 lg:grid-cols-[1fr_16rem]">
+      <section>
+        <h2 class="sr-only">All articles</h2>
+        <ul class="max-w-3xl">
+          {posts.map(post => <Card {...post} />)}
+        </ul>
+      </section>
+      <aside
+        class="border-border border-t pt-5 lg:border-t-0 lg:border-l lg:pl-6"
+      >
+        <h2 class="text-lg font-semibold">Browse by topic</h2>
+        <ul class="mt-4 flex flex-wrap gap-3">
+          {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} size="sm" />)}
+        </ul>
+      </aside>
+    </div>
+  </main>
+  <Footer />
+</Layout>

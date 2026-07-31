@@ -1,0 +1,114 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import ExternalLinks from "@/components/ExternalLinks.astro";
+import TechnologyList from "@/components/TechnologyList.astro";
+import { fellowship, publications, researchItems } from "@/data";
+import config from "@/config";
+---
+
+<Layout
+  title={`Research | ${config.site.title}`}
+  description="Research by Soumee Mukherjee in complex systems, medical imaging, deep learning, and reliable AI."
+>
+  <Header />
+  <main id="main-content" data-pagefind-body>
+    <header class="app-layout border-border border-b py-12 sm:py-16">
+      <p class="eyebrow">Research</p>
+      <h1 class="mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">
+        Learning from complex, real-world systems
+      </h1>
+      <p class="text-muted-foreground mt-4 max-w-3xl text-lg leading-8">
+        Work across agent-based modelling, biomedical image analysis, and the
+        reliability of information systems.
+      </p>
+    </header>
+
+    <section class="app-layout py-12 sm:py-16">
+      <div class="border-highlight max-w-4xl border-l-4 pl-5">
+        <p class="eyebrow">Fellowship</p>
+        <h2 class="mt-2 text-2xl font-semibold">{fellowship.name}</h2>
+        <p class="text-muted-foreground mt-1">
+          {fellowship.institution} · {fellowship.location} · {
+            fellowship.period.label
+          }
+        </p>
+        <p class="mt-4 leading-7">{fellowship.selection}</p>
+        <p class="text-muted-foreground mt-2 leading-7">{fellowship.summary}</p>
+      </div>
+    </section>
+
+    <section class="bg-muted/45 border-border border-y">
+      <div class="app-layout py-12 sm:py-16">
+        <h2 class="text-3xl font-semibold">Research experience</h2>
+        <div class="mt-8 grid gap-10">
+          {
+            researchItems.map(item => (
+              <article class="grid gap-4 md:grid-cols-[13rem_1fr]">
+                <div>
+                  <p class="text-highlight font-semibold">
+                    {item.period.label}
+                  </p>
+                  <p class="text-muted-foreground mt-1 text-sm">
+                    {item.location}
+                  </p>
+                </div>
+                <div class="border-border border-t pt-4 md:pt-0 md:pl-6">
+                  <p class="text-sm font-semibold">{item.institution}</p>
+                  <h3 class="mt-1 text-xl font-semibold">{item.project}</h3>
+                  <p class="text-muted-foreground mt-1">{item.role}</p>
+                  <p class="mt-4 leading-7">{item.summary}</p>
+                  <ul class="mt-4 list-disc space-y-2 pl-5">
+                    {item.highlights.map(highlight => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                  <TechnologyList items={item.technologies} />
+                  <ExternalLinks links={item.links} class="mt-5" />
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="app-layout py-12 sm:py-16">
+      <h2 class="text-3xl font-semibold">Publications</h2>
+      <ol class="mt-8 space-y-8">
+        {
+          publications.map(publication => (
+            <li class="border-border grid gap-3 border-t pt-5 md:grid-cols-[7rem_1fr]">
+              <p class="text-highlight font-semibold">{publication.year}</p>
+              <div>
+                <h3 class="text-xl leading-8 font-semibold">
+                  <a
+                    href={publication.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent"
+                  >
+                    {publication.title}
+                  </a>
+                </h3>
+                <p class="text-muted-foreground mt-2">
+                  {publication.authors.join(", ")}
+                </p>
+                <p class="mt-2">
+                  {publication.venue}
+                  {publication.pages ? `, pp. ${publication.pages}` : ""} ·{" "}
+                  <span class="capitalize">{publication.status}</span>
+                </p>
+                <p class="text-muted-foreground mt-1 text-sm">
+                  DOI: {publication.doi}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+  </main>
+  <Footer />
+</Layout>

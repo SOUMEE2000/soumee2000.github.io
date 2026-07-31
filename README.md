@@ -1,4 +1,14 @@
-# A simple blogsite to pen down my thoughts. made from jekyll using minimal mistakes theme, configured to my needs.
+# Soumee Mukherjee
 
-#### Interface:
-<img src= "https://github.com/SOUMEE2000/soumee2000.github.io/blob/master/assets/images/Interface.png">
+Static research, engineering, and writing portfolio built with Astro and
+adapted from the MIT-licensed AstroPaper template.
+
+## Development
+
+```sh
+npm install
+npm run dev
+```
+
+Run `npm run build` before publishing. GitHub Actions builds pull requests and
+deploys `master` to GitHub Pages.

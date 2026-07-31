@@ -1,0 +1,81 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import ExternalLinks from "@/components/ExternalLinks.astro";
+import TechnologyList from "@/components/TechnologyList.astro";
+import { projects } from "@/data";
+import config from "@/config";
+
+const categoryLabels = {
+  "ai-reliability": "AI reliability",
+  "information-systems": "Information systems",
+  "complex-systems": "Complex systems",
+  "medical-imaging": "Medical imaging",
+  "machine-learning": "Machine learning",
+  "developer-tools": "Developer tools",
+} as const;
+
+const orderedProjects = [...projects].sort(
+  (a, b) => (a.featuredRank ?? 99) - (b.featuredRank ?? 99)
+);
+---
+
+<Layout
+  title={`Work | ${config.site.title}`}
+  description="Selected software, machine-learning, information-systems, and research projects by Soumee Mukherjee."
+>
+  <Header />
+  <main id="main-content" class="app-layout pb-16" data-pagefind-body>
+    <header class="border-border max-w-4xl border-b py-12 sm:py-16">
+      <p class="eyebrow">Work</p>
+      <h1 class="mt-3 text-4xl font-bold sm:text-5xl">
+        Systems, models, and tools
+      </h1>
+      <p class="text-muted-foreground mt-4 max-w-3xl text-lg leading-8">
+        Production information systems and research prototypes spanning
+        source-grounded AI, geospatial analysis, complex systems, and medical
+        imaging.
+      </p>
+    </header>
+
+    <div class="grid gap-x-8 gap-y-12 pt-12 lg:grid-cols-2">
+      {
+        orderedProjects.map(project => (
+          <article
+            id={project.slug}
+            class="border-border flex scroll-mt-6 flex-col border-t pt-5"
+          >
+            {project.image && (
+              <img
+                src={project.image}
+                alt={project.imageAlt ?? ""}
+                width="1200"
+                height="720"
+                loading="lazy"
+                class="border-border mb-5 aspect-[16/9] w-full border object-cover object-top"
+              />
+            )}
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <p class="text-highlight text-sm font-semibold">
+                {categoryLabels[project.category]}
+              </p>
+              {project.period && (
+                <p class="text-muted-foreground text-sm">
+                  {project.period.label}
+                </p>
+              )}
+            </div>
+            <h2 class="mt-2 text-2xl font-semibold">{project.title}</h2>
+            <p class="text-muted-foreground mt-3 flex-1 leading-7">
+              {project.summary}
+            </p>
+            <TechnologyList items={project.technologies} />
+            <ExternalLinks links={project.links} class="mt-5" />
+          </article>
+        ))
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>

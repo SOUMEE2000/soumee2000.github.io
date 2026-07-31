@@ -1,0 +1,31 @@
+---
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import type { ExternalLink } from "@/data";
+
+type Props = {
+  links: readonly ExternalLink[];
+  class?: string;
+};
+
+const { links, class: className } = Astro.props;
+---
+
+{
+  links.length > 0 && (
+    <div class:list={["flex flex-wrap gap-x-5 gap-y-2", className]}>
+      {links.map(link => (
+        <a
+          href={link.url}
+          target={link.url.startsWith("mailto:") ? undefined : "_blank"}
+          rel={
+            link.url.startsWith("mailto:") ? undefined : "noopener noreferrer"
+          }
+          class="text-accent focus-outline inline-flex items-center gap-1 font-medium hover:underline hover:decoration-dashed hover:underline-offset-4"
+        >
+          {link.label}
+          <IconArrowRight class="size-4" aria-hidden="true" />
+        </a>
+      ))}
+    </div>
+  )
+}

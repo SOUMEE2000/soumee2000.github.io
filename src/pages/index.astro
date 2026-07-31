@@ -1,0 +1,170 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Socials from "@/components/Socials.astro";
+import Card from "@/components/Card.astro";
+import ExternalLinks from "@/components/ExternalLinks.astro";
+import SectionIntro from "@/components/SectionIntro.astro";
+import TechnologyList from "@/components/TechnologyList.astro";
+import { profile, projects, publications } from "@/data";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const posts = getSortedPosts(await getCollection("posts")).slice(0, 3);
+const selectedProjects = [...projects]
+  .filter(project => project.featuredRank)
+  .sort((a, b) => (a.featuredRank ?? 99) - (b.featuredRank ?? 99))
+  .slice(0, 3);
+const contactLinks = [
+  { label: "Email", url: `mailto:${profile.email}` },
+  ...profile.socialLinks,
+];
+---
+
+<Layout title={profile.name} description={profile.summary}>
+  <Header />
+
+  <main id="main-content" data-pagefind-body>
+    <section class="app-layout border-border border-b py-14 sm:py-20">
+      <p class="eyebrow">{profile.roles.join(" · ")}</p>
+      <h1 class="mt-3 max-w-4xl text-5xl leading-tight font-bold sm:text-7xl">
+        <span class="block sm:inline">Soumee</span>
+        <span class="block sm:ms-3 sm:inline">Mukherjee</span>
+      </h1>
+      <p class="mt-5 max-w-3xl text-xl leading-8 font-medium sm:text-2xl">
+        {profile.headline}
+      </p>
+      <p
+        class="text-muted-foreground mt-5 max-w-3xl text-base leading-7 sm:text-lg"
+      >
+        {profile.summary}
+      </p>
+      <div
+        class="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center"
+      >
+        <a
+          href={getRelativeLocaleUrl(locale, "work")}
+          class="bg-accent text-accent-foreground focus-outline inline-flex items-center gap-2 rounded-sm px-4 py-2.5 font-semibold"
+        >
+          Explore work
+        </a>
+        <Socials />
+      </div>
+    </section>
+
+    <section class="app-layout py-14 sm:py-18">
+      <SectionIntro
+        eyebrow="Selected work"
+        title="Engineering grounded in research"
+        description="Projects across reliable AI, information systems, complex-systems modelling, and applied machine learning."
+      />
+      <div class="grid gap-8 lg:grid-cols-3">
+        {
+          selectedProjects.map(project => (
+            <article class="border-border flex h-full flex-col border-t-2 pt-5">
+              <p class="text-highlight text-sm font-semibold">
+                {project.category.replaceAll("-", " ")}
+              </p>
+              <h3 class="mt-2 text-xl font-semibold">{project.title}</h3>
+              <p class="text-muted-foreground mt-3 flex-1 leading-7">
+                {project.summary}
+              </p>
+              <TechnologyList items={project.technologies.slice(0, 4)} />
+              <ExternalLinks links={project.links} class="mt-5" />
+            </article>
+          ))
+        }
+      </div>
+      <a
+        href={getRelativeLocaleUrl(locale, "work")}
+        class="text-accent mt-8 inline-flex items-center gap-1 font-semibold hover:underline hover:decoration-dashed hover:underline-offset-4"
+      >
+        View all projects
+        <IconArrowRight class="size-4" aria-hidden="true" />
+      </a>
+    </section>
+
+    <section class="bg-muted/45 border-border border-y">
+      <div class="app-layout py-14 sm:py-18">
+        <SectionIntro
+          eyebrow="Publications"
+          title="Research in complex systems and medical imaging"
+        />
+        <ol class="grid gap-8 lg:grid-cols-2">
+          {
+            publications.map(publication => (
+              <li>
+                <p class="text-highlight text-sm font-semibold">
+                  {publication.year} · {publication.status}
+                </p>
+                <h3 class="mt-2 text-lg leading-7 font-semibold">
+                  <a
+                    href={publication.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent"
+                  >
+                    {publication.title}
+                  </a>
+                </h3>
+                <p class="text-muted-foreground mt-2 leading-6">
+                  {publication.venue}
+                </p>
+              </li>
+            ))
+          }
+        </ol>
+        <a
+          href={getRelativeLocaleUrl(locale, "research")}
+          class="text-accent mt-8 inline-flex items-center gap-1 font-semibold hover:underline hover:decoration-dashed hover:underline-offset-4"
+        >
+          Explore research
+          <IconArrowRight class="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+
+    <section class="app-layout py-14 sm:py-18">
+      <SectionIntro
+        eyebrow="Writing"
+        title="Notes on machine learning and data"
+        description="Long-form explanations built from first principles, experiments, and working code."
+      />
+      <ul class="max-w-3xl">
+        {posts.map(post => <Card variant="h3" {...post} />)}
+      </ul>
+      <a
+        href={getRelativeLocaleUrl(locale, "writing")}
+        class="text-accent mt-4 inline-flex items-center gap-1 font-semibold hover:underline hover:decoration-dashed hover:underline-offset-4"
+      >
+        Read all writing
+        <IconArrowRight class="size-4" aria-hidden="true" />
+      </a>
+    </section>
+
+    <section class="bg-foreground text-background">
+      <div
+        class="app-layout py-12 sm:flex sm:items-end sm:justify-between sm:gap-8"
+      >
+        <div>
+          <p class="text-highlight text-sm font-semibold">Contact</p>
+          <h2 class="mt-2 max-w-2xl text-2xl font-semibold sm:text-3xl">
+            Interested in reliable AI, information systems, or research
+            collaboration?
+          </h2>
+        </div>
+        <ExternalLinks
+          links={contactLinks}
+          class="mt-6 sm:mt-0 [&_a]:text-inherit"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

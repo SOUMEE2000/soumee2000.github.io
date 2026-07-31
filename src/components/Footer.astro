@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import Socials from "./Socials.astro";
+
+type Props = {
+  noMarginTop?: boolean;
+} & HTMLAttributes<"footer">;
+
+const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  {...attrs}
+>
+  <div
+    class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"
+  >
+    <Socials />
+    <div class="my-2 flex flex-col items-center sm:flex-row">
+      <span>&#169; {currentYear} Soumee Mukherjee</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <a class="hover:text-accent" href="mailto:soumee.muk@gmail.com">
+        soumee.muk@gmail.com
+      </a>
+    </div>
+  </div>
+</footer>
