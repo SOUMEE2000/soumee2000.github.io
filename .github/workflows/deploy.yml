@@ -2,9 +2,9 @@ name: Build and deploy
 
 on:
   push:
-    branches: [master]
+    branches: [mainline]
   pull_request:
-    branches: [master]
+    branches: [mainline]
   workflow_dispatch:
 
 permissions:
