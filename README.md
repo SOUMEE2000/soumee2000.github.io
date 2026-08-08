@@ -11,4 +11,4 @@ npm run dev
 ```
 
 Run `npm run build` before publishing. GitHub Actions builds pull requests and
-deploys `master` to GitHub Pages.
+deploys `mainline` to GitHub Pages.
